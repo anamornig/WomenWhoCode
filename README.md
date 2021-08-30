@@ -15,23 +15,7 @@
 * [08 - JS - Extra-Homeworks](./08-JS-Extra-Homeworks)
 * Henry Challenge => [Inscribite acá para rendir](https://airtable.com/shrjhdL2GfsusMZ05)
 
-## Conceptos:
-
-* [Expressions vs Statements](./JS-conceptos/Statements-Expressions/)
-
-## Proceso de subida de homeworks
-
-__IMPORTANTE:__ Luego de completar cada una de las homeworks del día deberán ejecutar el siguiente comando para subir sus trabajos a sus repositorios (Deben estar posicionados sobre la carpeta principal `FT-M0` para que funcione y haber corrido previamente `npm install`:
-
-Para la homework número 1 no es necesario ya que su trabajo se realiza por fuera de este repositorio
-
-```bash
-  node submit.js {numeroHomework}
-```
-
-*En donde dice {numeroHomework} deben reemplazarlo simplemente por el número de homework correspondiente, por ejemplo `node submit.js 2`*
-
 # La Carrera
 
-Si querés saber más sobre la carrera, mirá este video :
-<iframe src="https://player.vimeo.com/video/426051769" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+Si querés saber más sobre la carrera de Full Stack Developer de Henry, mirá este video :
+<iframe src="https://player.vimeo.com/video/594727242" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
