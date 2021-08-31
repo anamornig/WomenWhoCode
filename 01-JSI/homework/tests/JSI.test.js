@@ -18,6 +18,14 @@ const {
   retornarPerimetro,
   deEuroAdolar,
   esVocal,
+  obtenerMayor,
+  colors,
+  esDiezOCinco,
+  estaEnRango,
+  esPrimo,
+  esVerdadero,
+  tieneTresDigitos,
+  doWhile
 } = require('../homework.js');
 
 describe('nuevaString', function() {
@@ -157,5 +165,79 @@ describe('esVocal(letra)', function() {
     expect(esVocal('i')).toBe('Es vocal');
     expect(esVocal('o')).toBe('Es vocal');
     expect(esVocal('u')).toBe('Es vocal');
+  });
+});
+
+describe('obtenerMayor(x, y)', function() {
+  it('should return x if it is larger than y', function() {
+    expect(obtenerMayor(10, 5)).toBe(10);
+  });
+  it('should return y if it is larger than x', function() {
+    expect(obtenerMayor(50, 100)).toBe(100);
+  });
+  it('should return either one if they are the same', function() {
+    expect(obtenerMayor(1000, 1000)).toBe(1000);
+  });
+});
+
+describe('colors(color)', function() {
+  it('should return \'This is {color}\'', function() {
+    expect(colors("blue")).toBe('This is blue');
+    expect(colors("red")).toBe('This is red');
+    expect(colors("green")).toBe('This is green');
+    expect(colors("orange")).toBe('This is orange');
+  });
+  it('should return \'Color not found\' if there is no argument or the argument is none of the expected ones', function() {
+    expect(colors()).toBe('Color not found');
+    expect(colors("pink")).toBe('Color not found');
+  });
+});
+
+describe('esDiezOCinco(num)', function() {
+  it('should return true if num is 10 or 5', function() {
+    expect(esDiezOCinco(10)).toBe(true);
+    expect(esDiezOCinco(5)).toBe(true);
+  });
+  it('should return false if num is not 10 or 5', function() {
+    expect(esDiezOCinco(11)).toBe(false);
+    expect(esDiezOCinco(6)).toBe(false);
+    expect(esDiezOCinco(0)).toBe(false);
+    expect(esDiezOCinco(5.01)).toBe(false);
+  });
+});
+
+describe('estaEnRango(num)', function() {
+  it('should return true if num is inside range', function() {
+    expect(estaEnRango(35.5)).toBe(true);
+    expect(estaEnRango(40)).toBe(true);
+    expect(estaEnRango(49)).toBe(true);
+    expect(estaEnRango(21)).toBe(true);
+  });
+  it('should return false if outside of range', function() {
+    expect(estaEnRango(10)).toBe(false);
+    expect(estaEnRango(20)).toBe(false);
+    expect(estaEnRango(50)).toBe(false);
+    expect(estaEnRango(100)).toBe(false);
+  });
+});
+
+describe('esPrimo(num)', function() {
+  it('should return true if num is prime', function() {
+    expect(esPrimo(7)).toBe(true);
+    expect(esPrimo(97)).toBe(true);
+  });
+  it('should return false if num is not prime', function() {
+    expect(esPrimo(10)).toBe(false);
+    expect(esPrimo(100)).toBe(false);
+    expect(esPrimo(0)).toBe(false);
+    expect(esPrimo(1)).toBe(false);
+  });
+});
+
+describe('doWhile(numero)', function() {
+  it('should add 5 to number until reaching a limit of 8 times and return the sum value', function() {
+    expect(doWhile(5)).toBe(45);
+    expect(doWhile(100)).toBe(140);
+    expect(doWhile(-1)).toBe(39);
   });
 });

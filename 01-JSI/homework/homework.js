@@ -109,6 +109,62 @@ function esVocal(letra){
 
 }
 
+function obtenerMayor(x, y) {
+  // "x" e "y" son números enteros (int).
+  // Devuelve el número más grande
+  // Si son iguales, devuelve cualquiera de los dos
+  // Tu código:
+}
+
+/*
+Para implementar la siguiente función vamos a utilizar una estructura de control de flujo nueva, 
+llamada switch, si no estás familiarizado con esta estructura, es un buen escenario para hacerle 
+una visita al mejor amigo del programador, INTERNET! 
+En la carrera del desarrollador constantemente es necesario recurrir a los recursos que nos 
+proporciona la web (Google, YouTube, MDN, Stack Overflow, y muchos más) en búsqueda de las 
+herramientas necesarias para resolver los distintos problemas que nos enfrentamos, por lo que 
+aprender a realizar estas búsquedas en internet es uno de los skill más importantes que puedes 
+adquirir!
+En tu buscador basta con simplemente escribir "switch Javascript" y listo. Éxitos!
+*/
+function colors(color) {
+  //La función recibe un color. Devolver el string correspondiente:
+  //En caso que el color recibido sea "blue", devuleve --> "This is blue"
+  //En caso que el color recibido sea "red", devuleve --> "This is red"
+  //En caso que el color recibido sea "green", devuleve --> "This is green"
+  //En caso que el color recibido sea "orange", devuleve --> "This is orange"
+  //Caso default: devuelve --> "Color not found"
+  //Usar el statement Switch.
+}
+
+function esDiezOCinco(numero) {
+  // Devuelve "true" si "numero" es 10 o 5
+  // De lo contrario, devuelve "false"
+  // Tu código:
+}
+
+function estaEnRango(numero) {
+  // Devuelve "true" si "numero" es menor que 50 y mayor que 20
+  // De lo contrario, devuelve "false"
+  // Tu código:
+}
+
+function esPrimo(numero) {
+  // Devuelve "true" si "numero" es primo
+  // De lo contrario devuelve "falso"
+  // Pista: un número primo solo es divisible por sí mismo y por 1
+  // Pista 2: Puedes resolverlo usando un bucle `for`
+  // Nota: Los números 0 y 1 NO son considerados números primos
+
+}
+
+function doWhile(numero) {
+  //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
+  //Retornar el valor final.
+  //Pueden usar un while o un bucle do ... while (Investigarlo si quieren hacerlo de la segunda forma)
+
+}
+
 
 
 // No modificar nada debajo de esta línea
@@ -133,4 +189,10 @@ module.exports = {
   retornarPerimetro,
   deEuroAdolar,
   esVocal,
+  obtenerMayor,
+  colors,
+  esDiezOCinco,
+  estaEnRango,
+  esPrimo,
+  doWhile
 };

@@ -11,6 +11,8 @@
   * `return`
 	* Declaraciones `if`
 	* Valores booleanos (`true`, `false`)
+  * `for`
+  * `&&`, `||`, `!`
 
 2. Desde la carpeta `WWC` en la carpeta donde clonaste el repo: ingresa el comando `npm install`, una vez que termine ingresa el comando `npm test JSI.test.js` para correr los tests automatizados. Al principio, todos los tests estarán fallados/rotos. Encontrarás las funciones para hacer pasar los tests en el archivo `homework.js`.
 
