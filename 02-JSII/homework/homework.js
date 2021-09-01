@@ -18,7 +18,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // y devuelve el array
   // Tu código:
 
-
+}
 
 function dePalabrasAFrase(palabras) {
   // "palabras" es un array de strings/cadenas
