@@ -1,6 +1,6 @@
 <img  src='../logo.png' height='70px'>
 
-# Lección 1: Introducción a Javascript
+# Lección 1: JSI - Introducción a Javascript
 
 En esta lección cubriremos:
 
