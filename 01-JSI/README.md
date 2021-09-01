@@ -550,5 +550,3 @@ Por ejemplo veamos como mostrar los números enteros desde el 1 al 5:
 A diferencia del `for`, en este caso no tenemos un índice que se vaya autoincrementando en cada paso, por lo que tendremos que hacerlo nosotros manualmente (En el ejemplo sería la parte del `count++`). 
 
 Por lo general vamos a utilizar el `while` por sobre el `for` en los casos en los cuales no sepamos con claridad de antemano la cantidad de iteraciones o ciclos que debe tener el bucle, ya que la condición va a ir variando sin saber de forma precisa cuando será `false`.
-
-### Abre la carpeta "homework" y completa la tarea descrita en el archivo [README]('https://github.com/soyHenry/WWC/blob/master/01-JSI/homework/README.md')

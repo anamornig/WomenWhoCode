@@ -1,26 +1,11 @@
-<p align='left'>
-    <img  src='../logo.png' height='70px'>
-</p>
-<table width="100%" style='table-layout:fixed;'>
-  <tr>
-    <td>
-      <a href="https://airtable.com/shrSzEYT4idEFGB8d?prefill_clase=06-JS-V">
-        <img src="https://static.thenounproject.com/png/204643-200.png" width="100"/>
-        <br>
-        Hacé click acá para dejar tu feedback sobre esta clase.
-      </a>
-    </td>
-  </tr>
-</table>
+<img  src='../logo.png' height='70px'>
 
-# Lección 6: Javascript V (Clases y `prototype`)
+# Lección 3: JSIII - Class + Prototype
 
 En esta lección cubriremos:
 
 * Clases
 * `prototype`
-
-<iframe src="https://player.vimeo.com/video/425235994" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ## Clases
 
@@ -34,12 +19,12 @@ En este ejemplo crearemos una clase `Gato`. La convención para las clases consi
 
 ```javascript
 function Gato(nombre) {
-    // El nuevo operador crea un objeto, "this"
-    this.nombre = nombre;
-    this.maullar = function() {
-        return 'Mi nombre es ' + this.nombre + ' ... Meow!';
-    }
-    // Devuelve el objeto "this"
+  // El nuevo operador crea un objeto, "this"
+  this.nombre = nombre;
+  this.maullar = function() {
+      return 'Mi nombre es ' + this.nombre + ' ... Meow!';
+  }
+  // Devuelve el objeto "this"
 }
 
 const sam = new Gato('Sam');
@@ -59,19 +44,19 @@ La creación de funciones es costosa (refiriéndonos a la capacidad de memoria d
 
 ```javascript
 function Usuario(nombre, github) {
-    this.nombre = nombre;
-    this.github = github;
+  this.nombre = nombre;
+  this.github = github;
 }
 
 Usuario.prototype.introduccion = function(){
-    return 'Mi nombre es ' + this.nombre + ', mi usuario de Github es ' + this.github + '.';
+  return 'Mi nombre es ' + this.nombre + ', mi usuario de Github es ' + this.github + '.';
 }
 
-let juan = new Usuario('Juan', 'juan.perez');
-let antonio = new Usuario('Antonio', 'atralice');
+let wan = new Usuario('Wan', 'wan.cirone');
+let sele = new Usuario('Sele', 'sele.bruno');
 
-console.log(juan.introduccion()); // Mi nombre es Juan, mi usuario de Github es juan.perez.
-console.log(antonio.introduccion()); // Mi nombre es Antonio, mi usuario de Github es atralice.
+console.log(wan.introduccion()); // Mi nombre es Wan, mi usuario de Github es wan.cirone.
+console.log(sele.introduccion()); // Mi nombre es Sele, mi usuario de Github es sele.bruno.
 
 ```
 
@@ -137,10 +122,10 @@ Nosotros también podemos generar nuestros propios constructores de los cuales h
     console.log('Soy '+this.nombre+' de '+this.ciudad);
   }
 
-> var Emi = new Persona('Emi', 'Chequer', 'Buenos Aires');
+> var Emi = new Persona('Wanda', 'Cirone', 'Buenos Aires');
 
 > Emi.saludar()
-< 'Soy Emi de Buenos Aires'
+< 'Soy Wanda de Buenos Aires'
 ```
 
 Ahora todo Alumno de Henry antes de Alumno es una Persona, asique podríamos decir que un Alumno hereda las propiedades de ser Persona.
@@ -173,17 +158,17 @@ Descartemos esta opción.
     this.empresa = 'Soy Henry';
   }
 
-> var toni = new Alumno('Toni', 'Tralice', 'Tucuman', 'Web Full Stack')
+> var sele = new Alumno('Selene', 'Bruno', 'Entre Rios', 'Web Full Stack')
 
 // Ahora si tenemos nuestra instancia creada a partir de ambos constructores
-> toni.curso
+> sele.curso
 < Web Full Stack
 
-> toni.apellido
-< Tralice
+> sele.apellido
+< Bruno
 
-> toni.saludar()
-< Uncaught TypeError: toni.saludar is not a 'function'
+> sele.saludar()
+< Uncaught TypeError: sele.saludar is not a 'function'
 // que paso?
 ```
 
@@ -200,16 +185,51 @@ Vamos a solucionar ese problema agregando al prototipo los métodos de Persona, 
 // si recuerdan el objeto prototype siempre tenia una propiedad constructor que hacia referencia a la función en si, con la asignación que hicimos arriba lo pisamos, por lo que deberíamos volver a agregarlo.
 > Alumno.prototype.constructor = Alumno
 
-> var Franco = new Alumno('Franco','Etcheverri','Montevideo','Bootcamp')
+> var Franco = new Alumno('Elena','Gonzalez','Montevideo','Bootcamp')
 
 > Franco.saludar()
-< 'Soy Franco de Montevideo'
+< 'Soy Elena de Montevideo'
 ```
 
-## Abre la carpeta "homework" y completa la tarea descrita en el archivo README
-[Homework](https://github.com/atralice/Curso.Prep.Henry/tree/master/06-JS-V/homework)
+### ES6 y Clases
 
-## Recursos adicionales
+Adicionalmente con la incportación de nuevas versiones de JavaScript surgió una nueva forma de declarar clases dentro del lenguaje que se asemeja más a la forma en la cual se realiza en los lenguajes orientados a Objetos:
 
-* [MDN: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-* [MDN: Prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
+```javascript
+class Persona {
+  constructor (nombre, apellido){
+    this.nombre = nombre,
+    this.apellido = apellido
+  }
+
+  saludar() {
+    console.log('Hola' + this.nombre);
+  }
+}
+
+var instructora = new Persona('Wan', 'Cirone');
+instructora.saludar();
+```
+
+Aquí el constructor será la función que se invocará al momento de ejecutar el `new Persona` y creará una instancia de esa clase a la cual podremos acceder siempre que querramos a partir de la variable donde lo asignamos.
+
+#### Herencia ES6
+
+En este caso la sintaxis para lograr la herencia también se ve modificada:
+
+```javascript
+class Empleado extends Persona {
+  constructor (nombre, apellido, empleo, sueldo){
+    super(nombre, apellido);
+    this.empleo = empleo;
+    this.sueldo = sueldo;
+  }
+}
+
+var instructora = new Empleado('Wan', 'Cirone', 'Instructor', 100);
+instructora.saludar();
+```
+
+En este caso no tenemos que preocuparnos de armar la cadena de prototipos de forma más manual sino que se encargará automáticamente JS por nosotros. 
+
+La palabra `super` dentro del constructor nos va a permitir invocar al constructor de la clase padre, en este caso `Persona` para evitar repetición de código. Por otro lado desde la variable que definimos `instructora` al ser una instancia de `Empleado` podrá por un lado acceder a todos los métodos definidos en el prototipo de `Empleado` pero también, al heredar de `Persona` podrá acceder a todos los métodos definidos dentro del prototipo de `Persona`.
