@@ -3,6 +3,7 @@
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   // Tu código:
+  return cb();
 
 }
 
@@ -11,6 +12,8 @@ function operacionMatematica(n1, n2, cb) {
   // Devolver el callback pasándole como argumentos los números recibidos.
   // Tu código:
 
+
+  return cb (n1,n2)
 }
 
 function sumarArray(numeros, cb) {
@@ -18,20 +21,31 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   // Tu código:
-
+  var numeros = [1,2,3,4]
+  for (var i=0; i<numeros.length; i++) {
+    if (
+      i / i === 1);
+    numeros + numeros;
+  }
+cb (sumarArray);
 }
 
 function forEach(array, cb) {
   // Itera sobre el array "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada elemento el arreglo)
   // Tu código:
-
+  var array = ['uno', 'dos', 'tres'];
+  array.forEach(function(elemento,indice));
 }
 
 function map(array, cb) {
   // Itera sobre cada elemento de "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   // Tu código:
+  var paises = ['alemania', 'francia', 'argentina', 'inglaterra'];
+  var nuevosPaises = paises.map (function(elemento,));
+  return cb(elemento);
+  return nuevosPaises;
 
 }
 
@@ -39,7 +53,13 @@ function filter(array) {
   // Filtrar todos los elementos del array que comiencen con la letra "a".
   // Devolver un nuevo array con los elementos que cumplen la condición
   // Tu código:
-
+var arrayNuevo = [];
+for (var i=0; i<array.length; i++) {
+  if (array [i][0] === "a") {
+    arrayNuevo.push(array[i])
+  }
+}
+return arrayNuevo;
 }
 
 // ---- Ejercicios de Repaso ----
@@ -52,8 +72,12 @@ function deObjetoArray(objeto){
       D: 1,
       B: 2,
       C: 3
-     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
+    }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   // Tu código:
+var objeto = 
+        D:1;
+        B:2;
+        C:3;
 
 }
 
